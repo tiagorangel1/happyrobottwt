@@ -1,0 +1,20 @@
+{
+  "name": "happy_robot_twitter",
+  "module": "src/index.js",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "start": "bun run src/index.js",
+    "dev": "bun run --watch src/index.js",
+    "forever": "pm2 start src/index.js --name happy_robot_twitter  --interpreter bun"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.3.16",
+    "ai": "^4.3.9"
+  }
+}
