@@ -1,9 +1,9 @@
 import { generateText } from "ai";
 import fs from "fs/promises";
 
-import fetchNotifs from "./utils/fetchNotifs.js";
-import sendPost from "./utils/sendPost.js";
-import vibes from "./utils/vibes.js";
+import readNotifications from "./notifications.js";
+import composePost from "./composer.js";
+import vibes from "./vibes.js";
 
 const getVibe = function (message) {
   let vibeKey = "normal";
@@ -46,7 +46,7 @@ const getVibe = function (message) {
   console.log("Logged in.");
 
   setInterval(async () => {
-    const notifs = await fetchNotifs({
+    const notifs = await readNotifications({
       cookies,
       csrfToken,
     });
@@ -156,7 +156,7 @@ ${JSON.stringify(post)}
 
       await Bun.sleep(Math.random() * 2000);
 
-      await sendPost({
+      await composePost({
         text,
         postId,
         cookies,

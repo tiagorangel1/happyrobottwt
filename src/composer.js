@@ -1,4 +1,4 @@
-async function sendPost({ text, postId, cookies, csrfToken }) {
+export default async function ({ text, postId, cookies, csrfToken }) {
   const out = await (
     await fetch(
       `https://pro.x.com/i/api/graphql/IVdJU2Vjw2llhmJOAZy9Ow/CreateTweet`,
@@ -89,13 +89,15 @@ async function sendPost({ text, postId, cookies, csrfToken }) {
   ).json();
 
   if (!out?.data?.create_tweet) {
-    console.error("error while creating post", JSON.stringify(out, null, 2));
+    console.error("[post composer]", out);
     return;
   }
 
-  console.log(
-    `[sent] https://x.com/i/status/${out?.data?.create_tweet?.tweet_results?.result?.legacy?.id_str}`
-  );
+  console.log(`[post composer] post created`, {
+    text,
+    postId,
+    csrfToken,
+    url: `https://x.com/i/status/${out?.data?.create_tweet?.tweet_results?.result?.legacy?.id_str}`,
+    output: out,
+  });
 }
-
-export default sendPost;
