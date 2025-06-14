@@ -1,6 +1,6 @@
 # Happy Robot for Twitter/X
 
-Twitter AI bot using reverse-engineered API endpoints.
+Twitter AI bot using reverse-engineered API endpoints. Has intelligent search
 
 **Requirements:**
 

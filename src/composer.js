@@ -5,6 +5,7 @@ export default async function ({ text, postId, cookies, csrfToken }) {
       {
         headers: {
           Accept: "*/*",
+          "accept-language": "en-US,en;q=0.9",
 
           authorization:
             "Bearer AAAAAAAAAAAAAAAAAAAAAFQODgEAAAAAVHTp76lzh3rFzcHbmHVvQxYYpTw%3DckAlMINMjmCwxUcaXbAN4XqJVdgMJaHqNOFgPMK0zN1qLqLQCF",
@@ -16,6 +17,7 @@ export default async function ({ text, postId, cookies, csrfToken }) {
           "x-twitter-active-user": "yes",
           "x-twitter-auth-type": "OAuth2Session",
           "x-twitter-client-language": "en",
+
           cookie: cookies,
           "cache-control": "no-cache",
           "content-type": "application/json",
