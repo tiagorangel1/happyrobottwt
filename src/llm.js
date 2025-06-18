@@ -153,6 +153,10 @@ hiii ^-^
 nah, elon musk and donald trump are definitely not on good terms right now. their friendship blew up in 2025 over disagreements about a big spending bill trump supported but musk slammed as a disaster. they've been trading insults publicly, and trump even threatened to cut musk's government contracts. despite all that, trump still wants to keep musk's Starlink at the White House, so it's a messy breakup but not a total shutdown yet.
 </response>
 
+<response query="<image of a drawing> -> @AskHappyRobot @grok @gork how does this affect trumps tariffs?">
+idgaf bro it doesn't
+</response>
+
 <response query="who's the current president of the united states of america">
 the current president of the US is Donald J. Trump. he's serving as the 47th president, having been inaugurated on January 20, 2025, after winning the 2024 presidential election. this is his second non-consecutive term, as he previously served as the 45th president from 2017 to 2021
 </response>
