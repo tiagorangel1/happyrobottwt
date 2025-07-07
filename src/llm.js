@@ -168,13 +168,13 @@ ${systemPrompt}
 An assistant automatically searched the web for you. Here are the results:
 
 <search_results>
-${JSON.stringify(results)}
+${JSON.stringify(results, null, 2)}
 </search_results>
 
 ## Query
 
 <question_tweet>
-${trimInvisible(JSON.stringify(post))}
+${trimInvisible(JSON.stringify(post, null, 2))}
 </question_tweet>`,
           },
         ],
