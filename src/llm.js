@@ -6,7 +6,7 @@ import search from "./search.js";
 import searchExa from "./exa.js";
 
 const trimInvisible = (string) => {
-  return string.replace(/[\s\u200B\u200C\u200D\uFEFF\u00A0]+/g, '');
+  return string.replace(/[\u200B\u200C\u200D\uFEFF\u00A0]/g, "");
 };
 
 const getVibe = function (message) {

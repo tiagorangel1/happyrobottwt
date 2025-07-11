@@ -22,6 +22,12 @@ const parsePost = async function (postId) {
       ];
     }
 
+    if (post.tombstone?.text) {
+      return {
+        text: "This Post was deleted by the Post author.",
+      };
+    }
+
     if (
       Array.isArray(post.display_text_range) &&
       post.display_text_range.length === 2 &&
@@ -44,7 +50,7 @@ const parsePost = async function (postId) {
         username: post.user.screen_name,
       },
       content: post.text,
-      thread_parent: post.parent ? parse(post.parent) : null,
+      replying_to: post.parent ? parse(post.parent) : null,
       quoting: post.quoted_tweet ? parse(post.quoted_tweet) : null,
     };
   };
@@ -54,7 +60,7 @@ const parsePost = async function (postId) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   (async () => {
-    const postId = prompt("post id:", "1933854888431059126").trim();
+    const postId = prompt("post id:", "1943607895578337418").trim();
 
     if (!postId) process.exit();
 
