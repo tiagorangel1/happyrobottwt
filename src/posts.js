@@ -22,6 +22,22 @@ const parsePost = async function (postId) {
       ];
     }
 
+    if (
+      Array.isArray(post.display_text_range) &&
+      post.display_text_range.length === 2 &&
+      typeof post.text === "string"
+    ) {
+      const [start, end] = post.display_text_range;
+      const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
+      const graphemes = Array.from(
+        segmenter.segment(post.text),
+        (s) => s.segment
+      );
+
+      post.text = graphemes.slice(start, end).join("").trim();
+      post.display_text_range = [0, post.text.length];
+    }
+
     return {
       author: {
         name: post.user.name,
