@@ -57,6 +57,8 @@ ${trimInvisible(JSON.stringify(post))}
 
 For queries that seem to require up-to-date information, such as "are elonmusk and donald trump on good terms right now?", ALWAYS request one search query.
 
+STOP USING EM DASHES (the —). Avoid starting your replies with "sounds like", "looks like" or similar.
+
 Current date: ${new Date().toISOString()}`,
   });
 
